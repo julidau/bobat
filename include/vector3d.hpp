@@ -19,14 +19,17 @@ public:
 	T* getComp() { return comp; }
 	vector3d<T> operator+ (vector3d<T> &other)
 	{
-		return vector3d<T>(comp[0]+other.
+		return vector3d<T>(comp[0]+other.getComp()[0],
+			comp[1]+other.getComp()[1],
+			comp[2]+other.getComp()[2]);
 	}
+	/*
 	vector3d<T> operator- (vector3d<T> &other)
 	vector3d<T> &operator+= (vector3d<T> &other)
 	vector3d<T> &operator-= (vector3d<T> &other)
 	
 	T operator* (vector3d<T> &other)
-	vector3d<T> &operator*= (T &scalar)
+	vector3d<T> &operator*= (T &scalar)*/
 };
 
 #endif // Header

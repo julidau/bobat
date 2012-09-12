@@ -1,3 +1,5 @@
 #include "types.h"
-#include "color.hpp"
+#include "corefunctions.hpp"
 
+#include "color.hpp"
+#include "vector3d.hpp"
