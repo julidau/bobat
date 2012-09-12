@@ -13,7 +13,7 @@ T sqroot(T value, T xn = 0)
 		xn = value;
 		
 	if (xn*xn-value <= 0)
-		return value;
+		return xn;
 	else
 		return sqroot(value,0.5f*(xn+value/xn));
 }

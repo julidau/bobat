@@ -16,4 +16,11 @@ typedef float			f32;
 typedef double			f64;
 typedef long double		f128;
 
+template <class T>
+struct returnStruct
+{
+	bool isReturn;
+	T returnValue;
+};
+
 #endif
