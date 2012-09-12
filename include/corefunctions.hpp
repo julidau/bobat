@@ -1,5 +1,5 @@
-#ifndef _BOBCAT_COREFUNC_
-#define _BOBCAT_COREFUNC_
+#ifndef _BOBAT_COREFUNC_
+#define _BOBAT_COREFUNC_
 
 #include "types.h"
 
