@@ -10,4 +10,4 @@ This Project is developed in SPARE TIME, which means I might not be able to fini
 targets
 =======
 
-This raytracer should be implemented to run in realtime.
+This raytracers Implementation shall run in realtime.
