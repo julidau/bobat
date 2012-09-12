@@ -1,5 +1,5 @@
-#ifndef _BOBCAT_COLOR_
-#define _BOBCAT_COLOR_
+#ifndef _BOBAT_COLOR_
+#define _BOBAT_COLOR_
 
 // Stores color information in rgb and alpha 
 template <class T>
