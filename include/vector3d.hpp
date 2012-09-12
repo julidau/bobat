@@ -4,6 +4,7 @@
 #include <string>
 #include "corefunctions.hpp"
 
+//defines mathematical standart 3D Vector
 template <class T>
 class vector3d
 {

@@ -1,6 +1,7 @@
 #ifndef _BOBCAT_TYPES_
 #define _BOBCAT_TYPES_
 
+// redefine standart types for simpler use
 typedef char 			i8;
 typedef short			i16;
 typedef int				i32;

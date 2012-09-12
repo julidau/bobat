@@ -1,6 +1,7 @@
 #ifndef _BOBCAT_COLOR_
 #define _BOBCAT_COLOR_
 
+// Stores color information in rgb and alpha 
 template <class T>
 class color
 {

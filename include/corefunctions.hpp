@@ -5,6 +5,7 @@
 
 namespace core
 {
+	//function to get the squareroot of value (recursivly implemented)
 template <class T>
 T sqroot(T value, T xn = 0)
 {
