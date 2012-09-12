@@ -1,5 +1,5 @@
-#ifndef _BOBCAT_TYPES_
-#define _BOBCAT_TYPES_
+#ifndef _BOBAT_TYPES_
+#define _BOBAT_TYPES_
 
 // redefine standart types for simpler use
 typedef char 			i8;

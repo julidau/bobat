@@ -1,5 +1,5 @@
-#ifndef _BOBCAT_VECTOR3D_
-#define _BOBCAT_VECTOR3D_
+#ifndef _BOBAT_VECTOR3D_
+#define _BOBAT_VECTOR3D_
 
 #include <string>
 #include "corefunctions.hpp"
