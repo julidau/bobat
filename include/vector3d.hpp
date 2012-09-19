@@ -70,7 +70,7 @@ public:
 	}
 
 	// Vector Products
-	T operator*(const vector3d<T> &other) const
+	T scalProd(const vector3d<T> &other) const
 	{
 		return comp[0]*other.comp[0]+comp[1]*other.comp[1]+comp[2]*other.comp[2];
 	}
@@ -83,13 +83,13 @@ public:
 	}
 
 	// get ABS
-	T abs_sqrt ()
+	T lenghtSQ()
 	{
 		return comp[0]*comp[0]+comp[1]*comp[1]+comp[2]*comp[2];
 	}
-	T abs()
+	T lenght()
 	{
-		return core::sqrt<T>(abs_sqrt());
+		return core::sqrt<T>(lenghtSQ());
 	}
 };
 
