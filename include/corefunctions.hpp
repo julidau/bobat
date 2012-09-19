@@ -7,7 +7,7 @@ namespace core
 {
 	//function to get the squareroot of value (recursivly implemented)
 template <class T>
-T sqroot(T value, T xn = 0)
+T sqrt(T value, T xn = 0)
 {
 	if (xn == 0)
 		xn = value;
@@ -15,7 +15,7 @@ T sqroot(T value, T xn = 0)
 	if (xn*xn-value <= 0)
 		return xn;
 	else
-		return sqroot(value,0.5f*(xn+value/xn));
+		return sqrt(value,(T)(0.5f*(xn+value/xn)));
 }
 
 }; // namespace core

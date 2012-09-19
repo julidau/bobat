@@ -14,8 +14,7 @@ public:
 	vector3d<T> getDirection() { return direction; }
 
 	vector3d<T> getPoint(f32 r) {
-		vector3d<T> test = r*direction;
-		return start+test;
+		return start+(direction*r);
 	}
 };
 
