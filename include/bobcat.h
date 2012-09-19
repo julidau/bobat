@@ -5,3 +5,5 @@
 #include "color.hpp"
 #include "vector3d.hpp"
 #include "ray3d.hpp"
+
+#include "primitiv.hpp"

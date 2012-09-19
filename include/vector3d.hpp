@@ -20,7 +20,7 @@ public:
 	T getZ() { return comp[2]; }
 
 
-
+	// operators
 	vector3d<T> &operator&()
 	{
 		return this;
@@ -68,9 +68,34 @@ public:
 		comp[2]*=scalar;
 		return *this;
 	}
+
+	// Vector Products
+	T operator*(const vector3d<T> &other) const
+	{
+		return comp[0]*other.comp[0]+comp[1]*other.comp[1]+comp[2]*other.comp[2];
+	}
+
+	vector3d<T> crossProd (const vector3d<T> &other) const
+	{
+		return vector3d<T>(comp[1]*other.comp[2]-comp[2]*other.comp[1],
+				comp[2]*other.comp[0]-comp[0]*other.comp[2],
+				comp[0]*other.comp[1]-comp[1]*other.comp[0]);
+	}
+
+	// get ABS
+	T abs_sqrt ()
+	{
+		return comp[0]*comp[0]+comp[1]*comp[1]+comp[2]*comp[2];
+	}
+	T abs()
+	{
+		return core::sqrt<T>(abs_sqrt());
+	}
 };
 
 template <class U,class T>
 vector3d<T> operator*(U scalar, vector3d<T> &other) { return other*scalar; }
+
+typedef vector3d<f32> vector3df;
 
 #endif // Header

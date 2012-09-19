@@ -13,9 +13,10 @@ public:
 	vector3d<T> getStart() { return start; }
 	vector3d<T> getDirection() { return direction; }
 
-	vector3d<T> getPoint(f32 r) {
-		return start+(direction*r);
+	vector3d<T> getPoint(f32 u) {
+		return start+(direction*u);
 	}
 };
 
+typedef ray3d<f32> ray3df;
 #endif
