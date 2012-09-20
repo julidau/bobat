@@ -17,11 +17,17 @@ bool polygon::getCollision(ray3df ray, f32 &u, vector3df &point)
 	if (oben == unten || unten == 0) return false;
 	u = oben/unten;
 
+	if (u < 0)
+		return false;
+
 	point = ray.getPoint(u);
 	// calculate x,y on Plane
 	const f32 c1 = point.comp[0]-a.comp[0];
 	const f32 c2 = point.comp[1]-a.comp[1];
 	const f32 D = s1.comp[0]*s2.comp[1]-s2.comp[0]*s1.comp[1];
+
+	if (D == 0)
+		return false;
 
 	const f32 x = (c1*s2.comp[1]-c2*s1.comp[0])/(D);
 	const f32 y = (c2*s1.comp[0]-c1*s1.comp[1])/(D);
