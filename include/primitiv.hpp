@@ -25,7 +25,6 @@ public:
 	polygon(vector3df a, vector3df b, vector3df c) {normal = (b-a).crossProd(c-a); points[0] = a; points[1] = b; points[2] = c;}
 
 	bool getCollision(ray3df ray, f32 &u, vector3df &point);
-
 };
 
 #endif /* PRIMITIV_HPP_ */

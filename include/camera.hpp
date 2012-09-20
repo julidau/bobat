@@ -5,13 +5,14 @@
  *      Author: julian
  */
 
-#ifndef CAMERA_HPP_
-#define CAMERA_HPP_
+#ifndef BOBAT_CAMERA_
+#define BOBAT_CAMERA_
 
 #include "plane.hpp"
 #include "vector3d.hpp"
 #include "color.hpp"
 #include "scene.h"
+#include "array.hpp"
 
 class camera
 {
@@ -21,7 +22,7 @@ public:
 	vector3df Rot;
 
 	camera(vector3df p, vector3df rot) : Point(p), Rot(rot) {}
-	coloru8 render(const scene &CurScene);
+	core::array<coloru8> render(const scene &CurScene);
 
 };
 

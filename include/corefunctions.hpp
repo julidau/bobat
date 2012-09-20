@@ -18,6 +18,15 @@ T sqrt(T value, T xn = 0)
 		return sqrt(value,(T)(0.5f*(xn+value/xn)));
 }
 
+template<class T>
+void memset(T* ptr,u64 num, const T &value)
+{
+	for (u64 i = 0; i < num; i++)
+	{
+		*ptr = value;
+		ptr++;
+	}
+}
 }; // namespace core
 
 #endif // Header

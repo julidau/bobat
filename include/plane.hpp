@@ -5,8 +5,8 @@
  *      Author: julian
  */
 
-#ifndef PLANE_HPP_
-#define PLANE_HPP_
+#ifndef BOBAT_PLANE_
+#define BOBAT_PLANE_
 
 #include "vector3d.hpp"
 

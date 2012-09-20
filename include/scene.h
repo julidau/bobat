@@ -5,20 +5,20 @@
  *      Author: julian
  */
 
-#ifndef SCENE_H_
-#define SCENE_H_
+#ifndef BOBAT_SCENE_
+#define BOBAT_SCENE_
 
 #include "primitiv.hpp"
-#include <vector>
+#include "array.hpp"
 
 struct scene
 {
 public:
-	std::vector<primitiv*> Plist;
+	core::array<primitiv*> Plist;
 	renderProp props;
 
-	scene(renderProp p, primitiv * primitivlist[], u32 lenght): props(p) { for (u32 i = 0; i < lenght; i++) Plist.push_back(primitivlist[i]); }
-	scene(renderProp p, std::vector<primitiv*> list): props(p) { Plist = list; }
+	scene(renderProp p, primitiv * primitivlist[], u32 lenght): props(p) {Plist.allocate(lenght); for (u32 i = 0; i < lenght; i++) Plist.push_back(primitivlist[i]); }
+	scene(renderProp p, core::array<primitiv*> list): props(p) { Plist = list; }
 	scene(renderProp p): props(p) { Plist.clear(); }
 	scene() {Plist.clear();}
 
