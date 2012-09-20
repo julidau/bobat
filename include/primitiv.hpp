@@ -17,12 +17,12 @@ public:
 	virtual bool getCollision(ray3df ray, f32 &u, vector3df &point) = 0;
 };
 
-class polygon : primitiv
+class polygon : public primitiv
 {
-	vector3df a,s1,s2;
+	vector3df points[3];
 	vector3df normal;
 public:
-	polygon(vector3df a, vector3df b, vector3df c) : a(a) , s1(b-a), s2(c-a) {normal = s1.crossProd(s2); }
+	polygon(vector3df a, vector3df b, vector3df c) {normal = (b-a).crossProd(c-a); points[0] = a; points[1] = b; points[2] = c;}
 
 	bool getCollision(ray3df ray, f32 &u, vector3df &point);
 

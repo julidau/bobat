@@ -7,3 +7,7 @@
 #include "ray3d.hpp"
 
 #include "primitiv.hpp"
+#include "plane.hpp"
+#include "scene.h"
+
+#include "camera.hpp"

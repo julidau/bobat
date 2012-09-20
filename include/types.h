@@ -23,4 +23,10 @@ struct returnStruct
 	T returnValue;
 };
 
+struct renderProp
+{
+	u32 width, height;
+	renderProp(u32 w, u32 h): width(w),height(h) {}
+	renderProp():width(0), height(0) {}
+};
 #endif

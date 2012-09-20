@@ -91,6 +91,15 @@ public:
 	{
 		return core::sqrt<T>(lenghtSQ());
 	}
+
+	void normalize()
+	{
+		if (lenghtSQ() != 0)
+		{
+			const f32 l = lenght();
+			for (u8 i = 0; i < 3; i++) comp[i] /= l;
+		}
+	}
 };
 
 template <class U,class T>

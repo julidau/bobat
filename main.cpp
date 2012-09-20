@@ -14,13 +14,8 @@ void printVec(vector3d<T> other)
 
 int main()
 {
-
-	vector3df s(0,0,0);
-	vector3df d(1,0.25,0);
-
-	ray3df testray(s,d);
-
-	polygon P(vector3df(2,-1,1),vector3df(1,2,1),vector3df(1,-1,3));
+	ray3df testray(vector3df(0,0,0),vector3df(-1,-1,0));
+	polygon P(vector3df(-3,1,1),vector3df(0,-1,2),vector3df(0,1,-1));
 
 	vector3df iP;
 	f32 u = 0;
