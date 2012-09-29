@@ -29,4 +29,13 @@ struct renderProp
 	renderProp(u32 w, u32 h): width(w),height(h) {}
 	renderProp():width(0), height(0) {}
 };
+
+//define Debug break
+#ifdef _DEBUG
+#include "assert.h"
+#define _DEBUG_BREAK_IF( _CONDITION_ ) assert( !(_CONDITION_) );
+#else
+#define _DEBUG_BREAK_IF( _CONDITION_ )
+#endif
+
 #endif

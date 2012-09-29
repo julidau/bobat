@@ -5,10 +5,12 @@
 template <class T>
 class color
 {
-	T rgba[4];
 public:
+	T rgba[4];
+
 	color(T R,T G,T B,T A) { rgba[0] = R; rgba[1] = G; rgba[2] = B; rgba[3] = A; }
 	color() { core::memset<T>(&rgba[0],4,T()); }
+	color(const color<T> &other) { if (this != &other) for (u8 i = 0; i < 4; i++) rgba[i] = other.rgba[i]; }
 
 	void setR(T v)
 	{

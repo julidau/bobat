@@ -21,7 +21,7 @@ private:
 	u32 size, lenght;
 public:
 	array() : data(0), size(0), lenght(0) {}
-	array(u32 init_size) : size(0), lenght(0) { allocate(init_size); }
+	array(u32 init_size) : data(0), size(0), lenght(0) { allocate(init_size); }
 	array(const array<T> &other) { *this = other; }	// Copy constructor
 
 	~array() { clear(); }
@@ -49,7 +49,8 @@ public:
 			delete olddata[i];*/
 
 		// erase array
-		delete [] olddata;
+		if (olddata)
+			delete [] olddata;
 	}
 
 	void insert(const T &elem, u32 index = 0)
@@ -115,6 +116,7 @@ public:
 
 	T &at(u32 index) const
 	{
+		_DEBUG_BREAK_IF(index > size);
 		return data [index];
 	}
 

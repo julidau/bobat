@@ -2,6 +2,7 @@
 #define _BOBAT_VECTOR3D_
 
 #include "corefunctions.hpp"
+#include <sstream>
 
 //defines mathematical standart 3D Vector
 template <class T>
@@ -69,6 +70,16 @@ public:
 		return *this;
 	}
 
+	bool operator== (const vector3d<T> &other)
+	{
+		return (comp[0] == other.comp[0] && comp[1] == other.comp[1] && comp[2] == other.comp[2]);
+	}
+
+	bool operator!= (const vector3d<T> &other)
+	{
+		return !(*this==other);
+	}
+
 	// Vector Products
 	T scalProd(const vector3d<T> &other) const
 	{
@@ -99,6 +110,19 @@ public:
 			const f32 l = lenght();
 			for (u8 i = 0; i < 3; i++) comp[i] /= l;
 		}
+	}
+
+	char * toString ()
+	{
+		std::stringstream buffer;
+		for (u8 i = 0; i < 3; i++)
+		{
+			buffer << comp[i] << "; ";
+		}
+		char * bu = new char[20];
+
+		buffer.get(bu,20);
+		return bu;
 	}
 };
 

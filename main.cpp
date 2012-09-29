@@ -3,6 +3,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <time.h>
+#include <ncurses.h>
 
 using namespace std;
 
@@ -13,33 +14,39 @@ void printVec(vector3d<T> other)
 	cout << other.getY() << "; ";
 	cout << other.getZ() << endl;
 }
-
-int main()
+#include <assert.h>
+int main(int argc, char ** args)
 {
+	initscr();
+
 	scene testscene;
-	testscene.props.width = 1920;
-	testscene.props.height = 1080;
+	testscene.props.width = 160;
+	testscene.props.height = 40;
 
 
-	testscene.Plist.push_back(new polygon(vector3df(2,0,0),vector3df(0,0,-1),vector3df(0,1,0)));
+	testscene.Plist.push_back(new polygon(vector3df(-1,0,0),vector3df(-1,0,1),vector3df(-1,1,1)));
 
-	camera testcam(vector3df(0,0,0),vector3df(1,0,0));
-
+	camera testcam(vector3df(3,0,0),vector3df(-1,0,0), vector3df(0,0,1));
+	cout << vector3df(1,0,0).crossProd(vector3df(0,0,1)).toString() << endl;
 	core::array<coloru8 > image = testcam.render(testscene);
-	//image.allocate(80*25);
 
-	for (u32 y = 0; y < 25; y++)
+	for (u32 y = 0; y < testscene.props.height; y++)
 	{
-		for (u32 x = 0; x < 80; x++)
+		for (u32 x = 0; x < testscene.props.width; x++)
 		{
-			//image.at(x*80+y).setR(rand()%2);
-			if( image.at(x*80+y).getR() != 0 )
-				cout << "\e[47m ";
+			if( image.at(x*testscene.props.height+y).getR() != 0 )
+				//printw("\e[47m ");
+				mvprintw(y,x,"1");
 			else
-				cout << "\e[41m ";
+				//printw("\e[41m ");
+				mvprintw(y,x,"0");
 		}
-		cout << endl;
+		//printw("\e[40m");
 	}
-	cout << "\e[40m ";
+	//printw("\e[40m ");
+	refresh();
+	getch();
+	endwin();
+
 	return 0;
 }
