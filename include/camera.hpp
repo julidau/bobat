@@ -21,9 +21,7 @@ public:
 	vector3df Center, Up, Lookat;
 
 	camera(vector3df center, vector3df lookat, vector3df up = vector3df(0,1,0));
-	core::array<coloru8> render(const scene &CurScene);
-	coloru8 render(const scene &CurScene, u32 x, u32 y);
-
+	u8 * render(scene &CurScene, u64 *time);
 };
 
 

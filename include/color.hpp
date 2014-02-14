@@ -60,5 +60,7 @@ public:
 		rgba[3] = a;
 	}
 };
+
 typedef color<u8> coloru8;
+
 #endif

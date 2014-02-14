@@ -120,6 +120,12 @@ public:
 		return data [index];
 	}
 
+	T * Data() { return data; }
+	T &operator[] (u32 i)
+	{
+		return at(i);
+	}
+
 	u32 getSize() const
 	{
 		return lenght;

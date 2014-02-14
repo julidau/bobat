@@ -27,6 +27,16 @@ void memset(T* ptr,u64 num, const T &value)
 		ptr++;
 	}
 }
+
+template<class T>
+void memcopy(T*dest, T*from, u64 howMany, u64 offset = 0)
+{
+	for (u64 i = howMany-1; i>offset; i--)
+		dest[i] = from[i];
+
+	dest[offset] = from[offset];
+}
+
 }; // namespace core
 
 #endif // Header
